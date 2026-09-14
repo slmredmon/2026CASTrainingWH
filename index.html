@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 CAS Training - Women's Health</title>
+<style>
+:root{
+  --primary:#1428A0; --primary-ink:#ffffff; --primary-soft:#eef0fb;
+  --bg:#f4f5fa; --card:#ffffff; --text:#181a2a; --muted:#5b5f77;
+  --border:#e3e5f0; --break:#f0f1f6; --highlight-bg:#fff6e6; --highlight-bd:#f0c368;
+  --shadow:0 1px 2px rgba(20,24,60,.06),0 8px 24px rgba(20,24,60,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --primary:#7c92ff; --primary-ink:#0c0e1a; --primary-soft:#1b2040;
+    --bg:#0f1120; --card:#171a2c; --text:#eceefc; --muted:#a3a7c2;
+    --border:#2a2e47; --break:#1b1e33; --highlight-bg:#332a12; --highlight-bd:#7a5a1e;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --primary:#7c92ff; --primary-ink:#0c0e1a; --primary-soft:#1b2040;
+  --bg:#0f1120; --card:#171a2c; --text:#eceefc; --muted:#a3a7c2;
+  --border:#2a2e47; --break:#1b1e33; --highlight-bg:#332a12; --highlight-bd:#7a5a1e;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+.wrap{max-width:880px;margin:0 auto;padding:0 20px 64px;}
+.hero{background:var(--primary);color:var(--primary-ink);padding:28px 20px 22px;}
+.hero-inner{max-width:880px;margin:0 auto;}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;margin:0 0 6px;}
+.hero h1{font-size:26px;line-height:1.2;margin:0 0 8px;font-weight:700;}
+.hero-meta{font-size:14px;opacity:.92;line-height:1.5;}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;}
+nav.tabs .tabs-inner{max-width:880px;margin:0 auto;display:flex;padding:0 20px;}
+nav.tabs button{appearance:none;background:none;border:0;color:var(--muted);font-size:14px;font-weight:600;padding:14px 14px;cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;}
+nav.tabs button.active{color:var(--primary);border-bottom-color:var(--primary);}
+section.panel{padding-top:24px;}
+section.panel[hidden]{display:none;}
+h2.section-head{font-size:19px;margin:0 0 16px;}
+h3.section-subhead{font-size:14px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:24px 0 10px;}
+h3.section-subhead:first-child{margin-top:0;}
+
+.daytabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+.daytab{appearance:none;cursor:pointer;background:var(--card);border:1px solid var(--border);color:var(--text);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;text-align:left;box-shadow:var(--shadow);}
+.daytab span{display:block;font-weight:400;color:var(--muted);font-size:11px;}
+.daytab.active{border-color:var(--primary);color:var(--primary);}
+.daytab.active span{color:var(--primary);opacity:.75;}
+.agenda-list{display:flex;flex-direction:column;gap:8px;}
+.agenda-row{display:flex;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow);}
+.agenda-row.is-break{background:var(--break);box-shadow:none;opacity:.85;}
+.agenda-row.is-highlight{background:var(--highlight-bg);border-color:var(--highlight-bd);}
+.agenda-time{flex:0 0 118px;font-size:12.5px;font-weight:600;color:var(--muted);padding-top:1px;}
+.agenda-row.is-highlight .agenda-time{color:var(--text);}
+.agenda-body{flex:1;min-width:0;}
+.agenda-title{font-size:14.5px;font-weight:600;}
+.agenda-people{font-size:13px;color:var(--muted);margin-top:2px;}
+.agenda-sub{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted);}
+.agenda-sub li{margin:2px 0;}
+.agenda-sub-group{list-style:none;margin:10px 0 2px;}
+.agenda-sub-group:first-child{margin-top:0;}
+.agenda-sub-head{display:block;font-weight:700;color:var(--text);margin-bottom:2px;}
+.agenda-sub-nested{margin:2px 0 0;padding-left:16px;list-style:disc;}
+.agenda-sub-nested li{margin:2px 0;}
+
+.task-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px;}
+.task-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:10px;}
+.task-day{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);}
+.task-title{font-size:15px;font-weight:700;margin-top:2px;}
+.task-progress{font-size:12.5px;font-weight:700;color:var(--primary);background:var(--primary-soft);border-radius:20px;padding:4px 10px;white-space:nowrap;}
+.task-list{display:flex;flex-direction:column;gap:2px;}
+.task-row{display:flex;align-items:center;gap:10px;padding:8px 4px;cursor:pointer;border-radius:8px;}
+.task-row:hover{background:var(--break);}
+.task-row input{position:absolute;opacity:0;width:1px;height:1px;}
+.task-box{flex:0 0 18px;height:18px;border:2px solid var(--border);border-radius:5px;position:relative;}
+.task-row input:checked + .task-box{background:var(--primary);border-color:var(--primary);}
+.task-row input:checked + .task-box::after{content:"";position:absolute;left:4px;top:0px;width:5px;height:9px;border:solid var(--primary-ink);border-width:0 2px 2px 0;transform:rotate(40deg);}
+.task-row input:focus-visible + .task-box{outline:2px solid var(--primary);outline-offset:2px;}
+.task-text{font-size:13.5px;}
+.task-row input:checked ~ .task-text{color:var(--muted);text-decoration:line-through;}
+
+.resource-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:640px){.resource-grid{grid-template-columns:1fr 1fr;}}
+.resource-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px;box-shadow:var(--shadow);}
+.resource-card.is-pending{opacity:.6;box-shadow:none;}
+.resource-card-title{font-size:13.5px;font-weight:700;margin-bottom:4px;}
+.resource-card-body{font-size:13px;color:var(--muted);line-height:1.5;}
+
+.welcome-hero{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:26px 22px;box-shadow:var(--shadow);margin-bottom:22px;}
+.welcome-hero h3{font-size:20px;margin:0 0 10px;}
+.welcome-hero p{font-size:14.5px;line-height:1.6;color:var(--text);margin:0 0 12px;}
+.welcome-hero p:last-child{margin-bottom:0;}
+.welcome-hero .sign-off{color:var(--muted);font-size:13.5px;font-style:italic;}
+.welcome-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(min-width:640px){.welcome-links{grid-template-columns:repeat(3,1fr);}}
+.welcome-link{cursor:pointer;text-align:left;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;box-shadow:var(--shadow);appearance:none;font-family:inherit;}
+.welcome-link-title{font-size:13.5px;font-weight:700;color:var(--primary);margin-bottom:3px;}
+.welcome-link-desc{font-size:12px;color:var(--muted);line-height:1.4;}
+
+.contact-card{margin-bottom:20px;}
+.contact-card a{color:var(--primary);font-weight:600;text-decoration:none;}
+.contact-card a:hover{text-decoration:underline;}
+
+.form-embed-card{margin-bottom:20px;padding:0;overflow:hidden;border-top:4px solid var(--primary);}
+.form-embed-card iframe{display:block;width:100%;height:480px;border:0;max-width:100%;max-height:100vh;}
+
+footer.app-footer{max-width:880px;margin:32px auto 0;padding:16px 20px 0;color:var(--muted);font-size:12px;text-align:center;}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">NeuroLogica &middot; A Samsung Company</p>
+    <h1>2026 CAS Training - Women's Health</h1>
+    <div class="hero-meta">September 14 &ndash; 18, 2026 &middot; Delta Hotel, Nashville Airport<br>733 Briley Parkway, Nashville, TN 37217</div>
+  </div>
+</div>
+<nav class="tabs">
+  <div class="tabs-inner">
+    <button type="button" class="tab-btn active" data-panel="welcome">Welcome</button>
+    <button type="button" class="tab-btn" data-panel="agenda">Agenda</button>
+    <button type="button" class="tab-btn" data-panel="tasks">Hands-On Tasks</button>
+    <button type="button" class="tab-btn" data-panel="resources">Info</button>
+  </div>
+</nav>
+<div class="wrap">
+
+  <section class="panel" id="panel-welcome">
+    <div class="welcome-hero">
+      <h3>Welcome, Team!</h3>
+      <p>We're so glad you're here. We can't wait to share with you our V-Series 2.0, the new features on the Z20 and our small but mighty release, the Q10. Most of all we get to learn from each other &mdash; because a team this good only gets better when we train together.</p>
+      <p>Expect full days, hands-on scan time, great conversations, fun at the Grand Ole Opry, and we hope a lot of laughs. Use the tabs to follow the schedule, complete tasks at hands-on stations, find event information and ask questions along the way.</p>
+      <p class="sign-off">Here's to a fantastic week &mdash; let's make it a great one!</p>
+    </div>
+
+    <h3 class="section-subhead">Have a Question?</h3>
+    <div class="resource-card form-embed-card">
+      <iframe title="Ask a Question" src="https://forms.cloud.microsoft/r/CfdscjNJ6X?embed=true" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen></iframe>
+    </div>
+
+    <div class="welcome-links">
+      <button type="button" class="welcome-link" data-goto="agenda"><div class="welcome-link-title">Agenda</div><div class="welcome-link-desc">See the full day-by-day schedule.</div></button>
+      <button type="button" class="welcome-link" data-goto="tasks"><div class="welcome-link-title">Hands-On Tasks</div><div class="welcome-link-desc">Check off each station as you go.</div></button>
+      <button type="button" class="welcome-link" data-goto="resources"><div class="welcome-link-title">Info</div><div class="welcome-link-desc">Venue, logistics, and more.</div></button>
+    </div>
+  </section>
+
+  <section class="panel" id="panel-agenda" hidden>
+    <h2 class="section-head">Agenda</h2>
+    <div class="daytabs"><button type="button" class="daytab active" data-day="mon">Monday<span>September 14</span></button><button type="button" class="daytab" data-day="tue">Tuesday<span>September 15</span></button><button type="button" class="daytab" data-day="wed">Wednesday<span>September 16</span></button><button type="button" class="daytab" data-day="thu">Thursday<span>September 17</span></button></div><div class="daypanels"><div class="daypanel" data-day="mon"><div class="agenda-list"><div class="agenda-row"><div class="agenda-time">&nbsp;</div><div class="agenda-body"><div class="agenda-title">Setup Team</div><div class="agenda-people">Please arrive by noon to help setup systems. At 3:00 PM, we will do a final agenda review.</div></div></div><div class="agenda-row"><div class="agenda-time">&nbsp;</div><div class="agenda-body"><div class="agenda-title">CAS Team</div><div class="agenda-people">Travel in anytime Monday. Training begins Tuesday.</div></div></div></div></div><div class="daypanel" data-day="tue" hidden><div class="agenda-list"><div class="agenda-row is-break"><div class="agenda-time">7:30 – 8:30 AM</div><div class="agenda-body"><div class="agenda-title">Breakfast</div><div class="agenda-people">Broadway Room</div></div></div><div class="agenda-row"><div class="agenda-time">8:30 – 9:00 AM</div><div class="agenda-body"><div class="agenda-title">Kickoff, Welcome &amp; Stand Out CAS Awards</div><div class="agenda-people">Teresa Casto &amp; Kat Snow</div></div></div><div class="agenda-row"><div class="agenda-time">9:00 – 10:00 AM</div><div class="agenda-body"><div class="agenda-title">V-Series 2.0 Reveal &amp; High-Level Overview</div><div class="agenda-people">Beth Carini, Nasrin Benion</div></div></div><div class="agenda-row"><div class="agenda-time">10:00 – 10:45 AM</div><div class="agenda-body"><div class="agenda-title">KOL &amp; Marketing Update</div><div class="agenda-people">Tammy Anderson, Lisa Thompson</div></div></div><div class="agenda-row is-break"><div class="agenda-time">10:45 – 11:00 AM</div><div class="agenda-body"><div class="agenda-title">Break</div></div></div><div class="agenda-row"><div class="agenda-time">11:00 – 11:30 AM</div><div class="agenda-body"><div class="agenda-title">REI Update</div><div class="agenda-people">Toni Miendl</div></div></div><div class="agenda-row"><div class="agenda-time">11:30 AM – 12:00 PM</div><div class="agenda-body"><div class="agenda-title">Urology Update</div><div class="agenda-people">Beth Carini &amp; Jeff Bradley</div></div></div><div class="agenda-row is-break"><div class="agenda-time">12:00 – 12:45 PM</div><div class="agenda-body"><div class="agenda-title">Lunch</div></div></div><div class="agenda-row"><div class="agenda-time">12:45 – 2:45 PM</div><div class="agenda-body"><div class="agenda-title">V-Series 2.0 Hands-On (rotations)</div><ul class="agenda-sub"><li class="agenda-sub-group"><span class="agenda-sub-head">2D/5D Follicle — Toni</span><ul class="agenda-sub-nested"><li>Walk through 2DFollicle and discuss best practices.</li><li>Practice 5DFollicle and discuss best practices and how to utilize this technology in a demo.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">Urology — Beth/Jeff</span><ul class="agenda-sub-nested"><li>Scan prostate phantom, practice application of biopsy guides.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">EzTrainer/S-Detect Breast — Tanya</span><ul class="agenda-sub-nested"><li>Walk through the options in EzTrainer and how best to use this guide to help customers.</li><li>Walk through the steps for S-Detect Breast.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">My Tune/Hera Setup — Nasrin/Risa</span><ul class="agenda-sub-nested"><li>Walk through setup and best practices for My Tune/Hera.</li><li>Add New Account, discuss why we don&#x27;t use Authority.</li><li>Practice Data Transfer and Administrator PW Reset (service admin pages).</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">EzExam/EzCheck Setup — Carrie</span><ul class="agenda-sub-nested"><li>Walk through best practices for setup for EzExam and EzCheck.</li><li>Discuss the best scenario to utilize each technology.</li><li>Practice the best tips shared in EzExam.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">EzPictogram/Uterine Assist/Uterine Contour — Pete</span><ul class="agenda-sub-nested"><li>Show where EzPictogram is located and practice the workflow.</li><li>Practice Uterine Assist and Uterine Contour on datasets.</li></ul></li></ul></div></div><div class="agenda-row"><div class="agenda-time">2:45 – 3:15 PM</div><div class="agenda-body"><div class="agenda-title">Connectivity</div><div class="agenda-people">Rosi Huerta</div></div></div><div class="agenda-row"><div class="agenda-time">3:15 – 3:45 PM</div><div class="agenda-body"><div class="agenda-title">Sonosync &amp; Mobile Export</div><div class="agenda-people">John Dixon</div></div></div><div class="agenda-row is-highlight"><div class="agenda-time">4:15 PM</div><div class="agenda-body"><div class="agenda-title">Meet in Lobby for Dinner &amp; Grand Ole Opry</div><div class="agenda-people">Shuttle bus departs 4:30 PM SHARP!</div></div></div></div></div><div class="daypanel" data-day="wed" hidden><div class="agenda-list"><div class="agenda-row is-break"><div class="agenda-time">7:30 – 8:30 AM</div><div class="agenda-body"><div class="agenda-title">Breakfast</div><div class="agenda-people">Broadway Room</div></div></div><div class="agenda-row"><div class="agenda-time">8:30 – 9:00 AM</div><div class="agenda-body"><div class="agenda-title">Welcome / Strengths &amp; Wows / Stand Out CAS Awards</div><div class="agenda-people">Teresa Casto &amp; Kat Snow</div></div></div><div class="agenda-row"><div class="agenda-time">9:00 – 10:00 AM</div><div class="agenda-body"><div class="agenda-title">Z20 1.02 High-Level Overview</div><div class="agenda-people">Carrie Boyer, Risa Schneck &amp; Todd Dennis (Peds Card)</div></div></div><div class="agenda-row"><div class="agenda-time">10:00 – 10:45 AM</div><div class="agenda-body"><div class="agenda-title">Q10 Reveal &amp; High-Level Overview</div><div class="agenda-people">Alex Sanchez, Lisa Thompson &amp; Shannon Redmon</div></div></div><div class="agenda-row is-break"><div class="agenda-time">10:45 – 11:00 AM</div><div class="agenda-body"><div class="agenda-title">Break</div></div></div><div class="agenda-row"><div class="agenda-time">11:00 AM – 12:00 PM</div><div class="agenda-body"><div class="agenda-title">Hands-On (20 min each)</div><ul class="agenda-sub"><li>Auto FHR/MV-Flow Max — Risa</li><li>Enzian, MUSA, IDEA &amp; IETA — Payal</li><li>FibroidVue, E-Cervix — Toni/PelvicAssist — Shannon</li></ul></div></div><div class="agenda-row is-break"><div class="agenda-time">12:00 – 12:45 PM</div><div class="agenda-body"><div class="agenda-title">Lunch</div></div></div><div class="agenda-row"><div class="agenda-time">12:45 – 2:45 PM</div><div class="agenda-body"><div class="agenda-title">Team Topics (20 min each)</div><ul class="agenda-sub"><li class="agenda-sub-group"><span class="agenda-sub-head">Q10 Tasks — Alex/Tanya</span><ul class="agenda-sub-nested"><li>Walk through the setup from the case to the cart.</li><li>Explain how to plug in cart to laptop, probes and all the power cords.</li><li>Discuss the differences in the EVO and Q10.</li><li>Manipulate the 2D, Color, PW Gain and ROI boxes.</li><li>Zoom the image.</li><li>Acquire an empty/phantom 3D Volume and manipulate the volume with the hard keys and then with touch Gesture slides.</li><li>Practice Mirror Touch.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">Connectivity/Compression/Meas. Mapping — Rosi</span><ul class="agenda-sub-nested"><li>Setup a fake Connectivity for storing images.</li><li>Setup Pkeys.</li><li>Note the two differences in Patient Page Dicom vs. Pkey Dicom and find out which is best practice.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">Sonosync/Mobile Export — John</span><ul class="agenda-sub-nested"><li>Turn on your hotspot.</li><li>Go to Connectivity page, connect system to hotspot, turn on WIFI in the Service page, then select images to send to your phone.</li><li>Save images to your phone.</li><li>Practice Sonosync setup if able.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">Preset Optimization/V4 Demo Highlights — Shannon/Payal</span><ul class="agenda-sub-nested"><li>What are changes to make to optimize 2D imaging, Color imaging, MV-Flow imaging.</li><li>Discuss the differences between the V4 and the V5.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">EzVolume/PortraitVue — Risa</span><ul class="agenda-sub-nested"><li>Recall a Volume of a fetal face.</li><li>Practice EzVolume and changing the Color Setup.</li><li>Discuss ways to use EzVolume in a demo setting.</li><li>Do the same with PortraitVue.</li></ul></li><li class="agenda-sub-group"><span class="agenda-sub-head">Live ViewAssist Setup — Carrie</span><ul class="agenda-sub-nested"><li>Review the back pages and setup for Live View Assist.</li><li>Discuss best practices on how to best demo this technology.</li></ul></li></ul></div></div><div class="agenda-row is-break"><div class="agenda-time">2:45 – 3:00 PM</div><div class="agenda-body"><div class="agenda-title">Break</div></div></div><div class="agenda-row"><div class="agenda-time">3:00 – 3:45 PM</div><div class="agenda-body"><div class="agenda-title">Tablet Setup/Monday.com</div><div class="agenda-people">Olesya Jungkman/Maggie Callen/Tiffany Louderback (Tablet) &amp; Brandey Perez (Monday.com)</div></div></div><div class="agenda-row"><div class="agenda-time">3:45 – 4:30 PM</div><div class="agenda-body"><div class="agenda-title">Side by Side Demos – How to Be Successful</div><div class="agenda-people">Teresa Casto, Kat Snow</div></div></div><div class="agenda-row"><div class="agenda-time">4:30 – 5:30 PM</div><div class="agenda-body"><div class="agenda-title">Panel Discussion: Demo Wins, Objection Handling, Demo Don&#x27;ts</div><div class="agenda-people">Tiffany Louderback, Michelle Cheshier, Risa Schneck, Payal Bathija, Pete Kelly</div></div></div><div class="agenda-row is-highlight"><div class="agenda-time">6:00 PM</div><div class="agenda-body"><div class="agenda-title">Team Dinners</div></div></div></div></div><div class="daypanel" data-day="thu" hidden><div class="agenda-list"><div class="agenda-row is-break"><div class="agenda-time">7:30 – 8:30 AM</div><div class="agenda-body"><div class="agenda-title">Breakfast</div><div class="agenda-people">Broadway Room</div></div></div><div class="agenda-row"><div class="agenda-time">8:30 – 9:00 AM</div><div class="agenda-body"><div class="agenda-title">Welcome / Strengths &amp; Wows / Stand Out CAS Awards</div><div class="agenda-people">Teresa Casto &amp; Kat Snow</div></div></div><div class="agenda-row"><div class="agenda-time">9:00 – 10:00 AM</div><div class="agenda-body"><div class="agenda-title">Volume Imaging Presentation — Basic &amp; Advanced</div><div class="agenda-people">Shannon Redmon / Teresa Casto</div><ul class="agenda-sub"><li>Acquiring Volumes — AB&amp;C planes, Quality, Volume Angle &amp; ROI Box</li><li>Optimizing the Volume Preset</li><li>Helpful Render Directions — Top/Bottom, Front/Back</li><li>Advanced Render Modes — RealisticVue, Skeletal Mode, CrystalVue &amp; CrystalVue Flow</li><li>Manipulating Volumes &amp; Z-Technique — Brain, Palate, Spine, Heart</li><li>MPR/MSV/ObliqueVue</li></ul></div></div><div class="agenda-row"><div class="agenda-time">10:00 AM – 12:00 PM</div><div class="agenda-body"><div class="agenda-title">Live models, datasets and phantoms - practice volume imaging</div><ul class="agenda-sub"><li>Acquire a volume with a narrow B and C plane.</li><li>Acquire a volume of a BPD, then move only the axis dot into the vermis of the cerebellum and then into the CSP.</li><li>Select different render modes, like VSI and add a Chroma.</li><li>In a fetal face volume with RealisticVue applied, create a different hue.</li><li>In a volume with CrystalVue applied, select Circle ROI.</li><li>If scanning a volunteer, scan a placenta with MV-Flow and acquire a volume.</li><li>Make a few volume preset changes and save into the User 1 preset.</li><li>Acquire a XI STIC if the fetus is cooperative, then select a Front Back Render direction and render a 4Chamber view.</li><li>If fetus is not cooperative, pull up an STIC dataset, change to Front Back Render direction and render a 4Chamber View. Then open up the ROI box in the B plane and place the Render Line at the level of the 3VV.</li><li>Acquire a sagittal spine and change to a Left/Right or Right/Left render direction.</li><li>On a volume of the spine, apply Multi-Slice View, turn on the Central View, then shift through the slices and change the thickness.</li><li>On a volume of the spine, activate ObliqueVue, use polyline to display slices and turn on OVIX. Select Plumb line and draw through the spine. Then do the same with Parallel line. (Hint: You need to be on six on one or nine on one to make Plumb line and Parallel line active.)</li></ul></div></div><div class="agenda-row is-highlight"><div class="agenda-time">12:00 – 1:00 PM</div><div class="agenda-body"><div class="agenda-title">System Breakdown</div><div class="agenda-people">All CAS team members are required to stay and help with system packup.</div></div></div><div class="agenda-row is-highlight"><div class="agenda-time">Travel Out</div><div class="agenda-body"><div class="agenda-title">Travel Out</div><div class="agenda-people">All flights out should be scheduled 3:00 PM or later. Lunch is on your own.</div></div></div></div></div></div>
+  </section>
+
+  <section class="panel" id="panel-tasks" hidden>
+    <h2 class="section-head">Daily Hands-On Tasks</h2>
+    <p class="form-note" style="margin-bottom:16px;color:var(--muted);font-size:12px;">Check off each station as you complete it. Your progress is saved on this device only.</p>
+    <div class="daytabs"><button type="button" class="daytab active" data-day="tue">Tuesday<span>September 15</span></button><button type="button" class="daytab" data-day="wed">Wednesday<span>September 16</span></button><button type="button" class="daytab" data-day="thu">Thursday<span>September 17</span></button></div><div class="daypanels"><div class="daypanel" data-day="tue"><h3 class="section-subhead">V-Series 2.0 Hands-On (rotations)</h3><div class="task-card" data-group="tuea" data-total="2"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">2D/5D Follicle — Toni</div></div><div class="task-progress" data-progress="tuea">0 / 2</div></div><div class="task-list"><label class="task-row" for="task-tuea-0"><input type="checkbox" id="task-tuea-0" class="task-check" data-task-id="tuea-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through 2DFollicle and discuss best practices.</span></label><label class="task-row" for="task-tuea-1"><input type="checkbox" id="task-tuea-1" class="task-check" data-task-id="tuea-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice 5DFollicle and discuss best practices and how to utilize this technology in a demo.</span></label></div></div><div class="task-card" data-group="tueb" data-total="1"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Urology — Beth/Jeff</div></div><div class="task-progress" data-progress="tueb">0 / 1</div></div><div class="task-list"><label class="task-row" for="task-tueb-0"><input type="checkbox" id="task-tueb-0" class="task-check" data-task-id="tueb-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Scan prostate phantom, practice application of biopsy guides.</span></label></div></div><div class="task-card" data-group="tuec" data-total="2"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">EzTrainer/S-Detect Breast — Tanya</div></div><div class="task-progress" data-progress="tuec">0 / 2</div></div><div class="task-list"><label class="task-row" for="task-tuec-0"><input type="checkbox" id="task-tuec-0" class="task-check" data-task-id="tuec-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through the options in EzTrainer and how best to use this guide to help customers.</span></label><label class="task-row" for="task-tuec-1"><input type="checkbox" id="task-tuec-1" class="task-check" data-task-id="tuec-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through the steps for S-Detect Breast.</span></label></div></div><div class="task-card" data-group="tued" data-total="3"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">My Tune/Hera Setup — Nasrin/Risa</div></div><div class="task-progress" data-progress="tued">0 / 3</div></div><div class="task-list"><label class="task-row" for="task-tued-0"><input type="checkbox" id="task-tued-0" class="task-check" data-task-id="tued-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through setup and best practices for My Tune/Hera.</span></label><label class="task-row" for="task-tued-1"><input type="checkbox" id="task-tued-1" class="task-check" data-task-id="tued-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Add New Account, discuss why we don&#x27;t use Authority.</span></label><label class="task-row" for="task-tued-2"><input type="checkbox" id="task-tued-2" class="task-check" data-task-id="tued-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice Data Transfer and Administrator PW Reset (service admin pages).</span></label></div></div><div class="task-card" data-group="tuee" data-total="3"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">EzExam/EzCheck Setup — Carrie</div></div><div class="task-progress" data-progress="tuee">0 / 3</div></div><div class="task-list"><label class="task-row" for="task-tuee-0"><input type="checkbox" id="task-tuee-0" class="task-check" data-task-id="tuee-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through best practices for setup for EzExam and EzCheck.</span></label><label class="task-row" for="task-tuee-1"><input type="checkbox" id="task-tuee-1" class="task-check" data-task-id="tuee-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Discuss the best scenario to utilize each technology.</span></label><label class="task-row" for="task-tuee-2"><input type="checkbox" id="task-tuee-2" class="task-check" data-task-id="tuee-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice the best tips shared in EzExam.</span></label></div></div><div class="task-card" data-group="tuef" data-total="2"><div class="task-card-head"><div><div class="task-day">Tuesday &middot; 12:45 – 2:45 PM</div><div class="task-title">EzPictogram/Uterine Assist/Uterine Contour — Pete</div></div><div class="task-progress" data-progress="tuef">0 / 2</div></div><div class="task-list"><label class="task-row" for="task-tuef-0"><input type="checkbox" id="task-tuef-0" class="task-check" data-task-id="tuef-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Show where EzPictogram is located and practice the workflow.</span></label><label class="task-row" for="task-tuef-1"><input type="checkbox" id="task-tuef-1" class="task-check" data-task-id="tuef-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice Uterine Assist and Uterine Contour on datasets.</span></label></div></div></div><div class="daypanel" data-day="wed" hidden><div class="task-card" data-group="wed1" data-total="3"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 11:00 AM – 12:00 PM</div><div class="task-title">Z20 Hands-On (20 min each)</div></div><div class="task-progress" data-progress="wed1">0 / 3</div></div><div class="task-list"><label class="task-row" for="task-wed1-0"><input type="checkbox" id="task-wed1-0" class="task-check" data-task-id="wed1-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Auto FHR/MV-Flow Max — Risa</span></label><label class="task-row" for="task-wed1-1"><input type="checkbox" id="task-wed1-1" class="task-check" data-task-id="wed1-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Enzian, MUSA, IDEA &amp; IETA — Payal</span></label><label class="task-row" for="task-wed1-2"><input type="checkbox" id="task-wed1-2" class="task-check" data-task-id="wed1-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">FibroidVue, E-Cervix — Toni/PelvicAssist — Shannon</span></label></div></div><h3 class="section-subhead">Team Topics</h3><div class="task-card" data-group="wed2a" data-total="7"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Q10 Tasks — Alex/Tanya</div></div><div class="task-progress" data-progress="wed2a">0 / 7</div></div><div class="task-list"><label class="task-row" for="task-wed2a-0"><input type="checkbox" id="task-wed2a-0" class="task-check" data-task-id="wed2a-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Walk through the setup from the case to the cart.</span></label><label class="task-row" for="task-wed2a-1"><input type="checkbox" id="task-wed2a-1" class="task-check" data-task-id="wed2a-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Explain how to plug in cart to laptop, probes and all the power cords.</span></label><label class="task-row" for="task-wed2a-2"><input type="checkbox" id="task-wed2a-2" class="task-check" data-task-id="wed2a-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Discuss the differences in the EVO and Q10.</span></label><label class="task-row" for="task-wed2a-3"><input type="checkbox" id="task-wed2a-3" class="task-check" data-task-id="wed2a-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Manipulate the 2D, Color, PW Gain and ROI boxes.</span></label><label class="task-row" for="task-wed2a-4"><input type="checkbox" id="task-wed2a-4" class="task-check" data-task-id="wed2a-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">Zoom the image.</span></label><label class="task-row" for="task-wed2a-5"><input type="checkbox" id="task-wed2a-5" class="task-check" data-task-id="wed2a-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">Acquire an empty/phantom 3D Volume and manipulate the volume with the hard keys and then with touch Gesture slides.</span></label><label class="task-row" for="task-wed2a-6"><input type="checkbox" id="task-wed2a-6" class="task-check" data-task-id="wed2a-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice Mirror Touch.</span></label></div></div><div class="task-card" data-group="wed2b" data-total="3"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Connectivity/Compression/Meas. Mapping — Rosi</div></div><div class="task-progress" data-progress="wed2b">0 / 3</div></div><div class="task-list"><label class="task-row" for="task-wed2b-0"><input type="checkbox" id="task-wed2b-0" class="task-check" data-task-id="wed2b-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Setup a fake Connectivity for storing images.</span></label><label class="task-row" for="task-wed2b-1"><input type="checkbox" id="task-wed2b-1" class="task-check" data-task-id="wed2b-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Setup Pkeys.</span></label><label class="task-row" for="task-wed2b-2"><input type="checkbox" id="task-wed2b-2" class="task-check" data-task-id="wed2b-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Note the two differences in Patient Page Dicom vs. Pkey Dicom and find out which is best practice.</span></label></div></div><div class="task-card" data-group="wed2c" data-total="4"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Sonosync/Mobile Export — John</div></div><div class="task-progress" data-progress="wed2c">0 / 4</div></div><div class="task-list"><label class="task-row" for="task-wed2c-0"><input type="checkbox" id="task-wed2c-0" class="task-check" data-task-id="wed2c-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Turn on your hotspot.</span></label><label class="task-row" for="task-wed2c-1"><input type="checkbox" id="task-wed2c-1" class="task-check" data-task-id="wed2c-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Go to Connectivity page, connect system to hotspot, turn on WIFI in the Service page, then select images to send to your phone.</span></label><label class="task-row" for="task-wed2c-2"><input type="checkbox" id="task-wed2c-2" class="task-check" data-task-id="wed2c-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Save images to your phone.</span></label><label class="task-row" for="task-wed2c-3"><input type="checkbox" id="task-wed2c-3" class="task-check" data-task-id="wed2c-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice Sonosync setup if able.</span></label></div></div><div class="task-card" data-group="wed2d" data-total="2"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Preset Optimization/V4 Demo Highlights — Shannon/Payal</div></div><div class="task-progress" data-progress="wed2d">0 / 2</div></div><div class="task-list"><label class="task-row" for="task-wed2d-0"><input type="checkbox" id="task-wed2d-0" class="task-check" data-task-id="wed2d-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">What are changes to make to optimize 2D imaging, Color imaging, MV-Flow imaging.</span></label><label class="task-row" for="task-wed2d-1"><input type="checkbox" id="task-wed2d-1" class="task-check" data-task-id="wed2d-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Discuss the differences between the V4 and the V5.</span></label></div></div><div class="task-card" data-group="wed2e" data-total="4"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">EzVolume/PortraitVue — Risa</div></div><div class="task-progress" data-progress="wed2e">0 / 4</div></div><div class="task-list"><label class="task-row" for="task-wed2e-0"><input type="checkbox" id="task-wed2e-0" class="task-check" data-task-id="wed2e-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Recall a Volume of a fetal face.</span></label><label class="task-row" for="task-wed2e-1"><input type="checkbox" id="task-wed2e-1" class="task-check" data-task-id="wed2e-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Practice EzVolume and changing the Color Setup.</span></label><label class="task-row" for="task-wed2e-2"><input type="checkbox" id="task-wed2e-2" class="task-check" data-task-id="wed2e-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Discuss ways to use EzVolume in a demo setting.</span></label><label class="task-row" for="task-wed2e-3"><input type="checkbox" id="task-wed2e-3" class="task-check" data-task-id="wed2e-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">Do the same with PortraitVue.</span></label></div></div><div class="task-card" data-group="wed2f" data-total="2"><div class="task-card-head"><div><div class="task-day">Wednesday &middot; 12:45 – 2:45 PM</div><div class="task-title">Live ViewAssist Setup — Carrie</div></div><div class="task-progress" data-progress="wed2f">0 / 2</div></div><div class="task-list"><label class="task-row" for="task-wed2f-0"><input type="checkbox" id="task-wed2f-0" class="task-check" data-task-id="wed2f-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Review the back pages and setup for Live View Assist.</span></label><label class="task-row" for="task-wed2f-1"><input type="checkbox" id="task-wed2f-1" class="task-check" data-task-id="wed2f-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Discuss best practices on how to best demo this technology.</span></label></div></div></div><div class="daypanel" data-day="thu" hidden><div class="task-card" data-group="thu" data-total="12"><div class="task-card-head"><div><div class="task-day">Thursday &middot; 10:00 AM – 12:00 PM</div><div class="task-title">Live models, datasets and phantoms - practice volume imaging</div></div><div class="task-progress" data-progress="thu">0 / 12</div></div><div class="task-list"><label class="task-row" for="task-thu-0"><input type="checkbox" id="task-thu-0" class="task-check" data-task-id="thu-0"><span class="task-box" aria-hidden="true"></span><span class="task-text">Acquire a volume with a narrow B and C plane.</span></label><label class="task-row" for="task-thu-1"><input type="checkbox" id="task-thu-1" class="task-check" data-task-id="thu-1"><span class="task-box" aria-hidden="true"></span><span class="task-text">Acquire a volume of a BPD, then move only the axis dot into the vermis of the cerebellum and then into the CSP.</span></label><label class="task-row" for="task-thu-2"><input type="checkbox" id="task-thu-2" class="task-check" data-task-id="thu-2"><span class="task-box" aria-hidden="true"></span><span class="task-text">Select different render modes, like VSI and add a Chroma.</span></label><label class="task-row" for="task-thu-3"><input type="checkbox" id="task-thu-3" class="task-check" data-task-id="thu-3"><span class="task-box" aria-hidden="true"></span><span class="task-text">In a fetal face volume with RealisticVue applied, create a different hue.</span></label><label class="task-row" for="task-thu-4"><input type="checkbox" id="task-thu-4" class="task-check" data-task-id="thu-4"><span class="task-box" aria-hidden="true"></span><span class="task-text">In a volume with CrystalVue applied, select Circle ROI.</span></label><label class="task-row" for="task-thu-5"><input type="checkbox" id="task-thu-5" class="task-check" data-task-id="thu-5"><span class="task-box" aria-hidden="true"></span><span class="task-text">If scanning a volunteer, scan a placenta with MV-Flow and acquire a volume.</span></label><label class="task-row" for="task-thu-6"><input type="checkbox" id="task-thu-6" class="task-check" data-task-id="thu-6"><span class="task-box" aria-hidden="true"></span><span class="task-text">Make a few volume preset changes and save into the User 1 preset.</span></label><label class="task-row" for="task-thu-7"><input type="checkbox" id="task-thu-7" class="task-check" data-task-id="thu-7"><span class="task-box" aria-hidden="true"></span><span class="task-text">Acquire a XI STIC if the fetus is cooperative, then select a Front Back Render direction and render a 4Chamber view.</span></label><label class="task-row" for="task-thu-8"><input type="checkbox" id="task-thu-8" class="task-check" data-task-id="thu-8"><span class="task-box" aria-hidden="true"></span><span class="task-text">If fetus is not cooperative, pull up an STIC dataset, change to Front Back Render direction and render a 4Chamber View. Then open up the ROI box in the B plane and place the Render Line at the level of the 3VV.</span></label><label class="task-row" for="task-thu-9"><input type="checkbox" id="task-thu-9" class="task-check" data-task-id="thu-9"><span class="task-box" aria-hidden="true"></span><span class="task-text">Acquire a sagittal spine and change to a Left/Right or Right/Left render direction.</span></label><label class="task-row" for="task-thu-10"><input type="checkbox" id="task-thu-10" class="task-check" data-task-id="thu-10"><span class="task-box" aria-hidden="true"></span><span class="task-text">On a volume of the spine, apply Multi-Slice View, turn on the Central View, then shift through the slices and change the thickness.</span></label><label class="task-row" for="task-thu-11"><input type="checkbox" id="task-thu-11" class="task-check" data-task-id="thu-11"><span class="task-box" aria-hidden="true"></span><span class="task-text">On a volume of the spine, activate ObliqueVue, use polyline to display slices and turn on OVIX. Select Plumb line and draw through the spine. Then do the same with Parallel line. (Hint: You need to be on six on one or nine on one to make Plumb line and Parallel line active.)</span></label></div></div></div></div>
+  </section>
+
+  <section class="panel" id="panel-resources" hidden>
+    <h2 class="section-head">Info</h2>
+    <h3 class="section-subhead">Event Logistics</h3><div class="resource-grid"><div class="resource-card"><div class="resource-card-title">Venue</div><div class="resource-card-body">Delta Hotel, Nashville Airport<br>733 Briley Parkway, Nashville, TN 37217</div></div><div class="resource-card"><div class="resource-card-title">Setup Team Arrival</div><div class="resource-card-body">Monday, by noon — please arrive early to help set up systems. At 3:00 PM, we will do a final agenda review.</div></div><div class="resource-card"><div class="resource-card-title">Tuesday Evening</div><div class="resource-card-body">Dismiss at 4:15 PM for dinner &amp; the Grand Ole Opry. Shuttle bus departs 4:30 PM SHARP!</div></div><div class="resource-card"><div class="resource-card-title">Wednesday Evening</div><div class="resource-card-body">Team Dinners at 6:00 PM.</div></div><div class="resource-card"><div class="resource-card-title">Thursday Wrap-Up</div><div class="resource-card-body">System breakdown 12:00 – 1:00 PM — all CAS team members are required to stay and help. Book flights for 3:00 PM or later; lunch is on your own.</div></div></div><h3 class="section-subhead">More Resources</h3><div class="resource-grid"><div class="resource-card"><div class="resource-card-title">Training Powerpoints &amp; Quick Guides</div><div class="resource-card-body">All training resources will be added to the WH Applications Team General shared page and Bynder for internal use only.</div></div></div>
+  </section>
+
+</div>
+<footer class="app-footer">2026 CAS Training - Women's Health &middot; Nashville, TN</footer>
+<script>
+(function(){
+  "use strict";
+
+  function initTabs(){
+    var buttons = document.querySelectorAll('.tab-btn');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        document.querySelectorAll('section.panel').forEach(function(p){ p.hidden = true; });
+        var panel = document.getElementById('panel-' + btn.dataset.panel);
+        if (panel) panel.hidden = false;
+      });
+    });
+    var gotoLinks = document.querySelectorAll('.welcome-link');
+    gotoLinks.forEach(function(link){
+      link.addEventListener('click', function(){
+        var target = document.querySelector('.tab-btn[data-panel="' + link.dataset.goto + '"]');
+        if (target) target.click();
+      });
+    });
+    document.querySelectorAll('.daytabs').forEach(function(tabsEl){
+      var panelsEl = tabsEl.nextElementSibling;
+      if (!panelsEl || !panelsEl.classList.contains('daypanels')) return;
+      var dayTabs = tabsEl.querySelectorAll('.daytab');
+      dayTabs.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          dayTabs.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          panelsEl.querySelectorAll('.daypanel').forEach(function(p){ p.hidden = true; });
+          var panel = panelsEl.querySelector('.daypanel[data-day="' + btn.dataset.day + '"]');
+          if (panel) panel.hidden = false;
+        });
+      });
+    });
+  }
+
+  function initTasks(){
+    var STORE_KEY = 'cas-training-tasks-v1';
+    var done = {};
+    try {
+      var raw = localStorage.getItem(STORE_KEY);
+      if (raw) done = JSON.parse(raw) || {};
+    } catch (e) { done = {}; }
+
+    function save(){
+      try { localStorage.setItem(STORE_KEY, JSON.stringify(done)); } catch (e) {}
+    }
+
+    function updateProgress(group){
+      var card = document.querySelector('.task-card[data-group="' + group + '"]');
+      if (!card) return;
+      var total = parseInt(card.dataset.total, 10) || 0;
+      var checks = card.querySelectorAll('.task-check');
+      var count = 0;
+      checks.forEach(function(c){ if (c.checked) count++; });
+      var badge = document.querySelector('[data-progress="' + group + '"]');
+      if (badge) badge.textContent = count + ' / ' + total;
+    }
+
+    var boxes = document.querySelectorAll('.task-check');
+    boxes.forEach(function(box){
+      var id = box.dataset.taskId;
+      box.checked = !!done[id];
+      box.addEventListener('change', function(){
+        done[id] = box.checked;
+        save();
+        var card = box.closest('.task-card');
+        updateProgress(card ? card.dataset.group : id.split('-')[0]);
+      });
+    });
+    document.querySelectorAll('.task-card').forEach(function(card){
+      updateProgress(card.dataset.group);
+    });
+  }
+
+  function boot(){
+    initTabs();
+    initTasks();
+  }
+
+  if (document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+</body>
+</html>
